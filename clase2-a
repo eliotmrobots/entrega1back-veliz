@@ -1,0 +1,46 @@
+
+import fs from 'fs';
+/*
+ crear y escribir en un archivo
+fs.writeFileSync('./test.txt', 'contenido de prueba creado por fs');
+fs.writeFileSync('./test2.txt', 'si lo vuelvo hacer el conteniido se pisa');
+ eliminar un archivo
+fs.unlinkSync('./test2.txt');
+
+  testear si un archivo existe
+const existe = fs.existsSync('./test.txt');
+
+if (existe) {
+
+    // readfileSync lee el contenido de un archivo      
+   const contenido = fs.readFileSync('./test.txt', 'utf-8')
+
+   console.log('contenido actual' , contenido)
+    // appendFileSync agrega contenido al final del archivo         
+   fs.appendFileSync('./test.txt', ' - nuevo contenido agregado')
+
+    const contenidoActualizado = fs.readFileSync('./test.txt', 'utf-8')
+    console.log('contenido actualizado',    contenidoActualizado)
+} 
+
+
+    // MANEJO DE ARCHIVOS CON PROMESAS Y ASYNC AWAIT
+    async function manejoDeArchivos () {
+        try {
+        const path = './test.txt'
+        await fs.promises.writeFile (path, "imformacion de promesas")
+
+        const contenido = await fs.promises.readFile (path, "utf-8")
+        console.log (contenido)
+
+        await fs.promises.appendFile (path, "nuevas informaciones de promesas")
+
+        const contenido2 = await fs.promises.readFile (path, "utf-8")
+        console.log(contenido2)
+    } catch (error) {
+        console.log('hubo un error', error)
+    }
+
+    }
+
+    manejoDeArchivos() */

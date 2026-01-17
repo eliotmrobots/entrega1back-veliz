@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "title": "Notebook Gamer",
+    "description": "Notebook de alta gama para gaming",
+    "code": "NB001",
+    "price": 150,
+    "status": true,
+    "stock": 75,
+    "category": "Electrónica",
+    "thumbnails": [
+      "img1.jpg",
+      "img2.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mouse Inalámbrico",
+    "description": "Mouse ergonómico",
+    "code": "MS001",
+    "price": 180,
+    "status": true,
+    "stock": 75,
+    "category": "Accesorios",
+    "thumbnails": []
+  },
+  {
+    "id": 3,
+    "title": "Teclado Mecánico",
+    "description": "Teclado mecánico RGB",
+    "code": "KB001",
+    "price": 80,
+    "status": true,
+    "stock": 30,
+    "category": "Accesorios",
+    "thumbnails": [
+      "img3.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Producto de prueba",
+    "description": "Descripción del producto",
+    "code": "PROD001",
+    "price": 100,
+    "status": true,
+    "stock": 50,
+    "category": "Categoría test",
+    "thumbnails": []
+  }
+]
