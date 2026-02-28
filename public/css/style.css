@@ -1,0 +1,23 @@
+body {
+    background-color:gray;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1,
+h2 {
+    display: flex;
+    text-align: center;
+    align-items: center;
+  margin-bottom: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+button {
+  margin-top: 4px;
+}
