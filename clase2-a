@@ -1,6 +1,6 @@
 
-import fs from 'fs';
-/*
+/*import fs from 'fs';
+
  crear y escribir en un archivo
 fs.writeFileSync('./test.txt', 'contenido de prueba creado por fs');
 fs.writeFileSync('./test2.txt', 'si lo vuelvo hacer el conteniido se pisa');

@@ -1,9 +1,11 @@
 import fs from "fs";
 import path from "path";
+import ProductManager from "./ProductManager.js";
 
 class CartManager {
     constructor (){
         this.path = path.join(process.cwd(), "data", "carts.json");
+        this.productManager = new ProductManager();
     }
 
 //leer todos los carritos 
@@ -48,6 +50,13 @@ addProductToCart(cartId,productId){
     if (cartIndex === -1){
         return null;
     }
+
+    // Verificar que el producto exista en products.json
+    const productExists = this.productManager.getProductsById(productId);
+    if (!productExists) {
+        throw new Error(`El producto con id ${productId} no existe`);
+    }
+
     const cart = carts[cartIndex];
         
         // Buscar si el producto ya existe en el carrito

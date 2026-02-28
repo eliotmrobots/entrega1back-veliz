@@ -29,16 +29,19 @@ addProduct (productData){
     const products = this.getProducts();
 
     // validar campos requeridos 
-    const {title,description,code,price,stock,category}= productData
+    const {title,description,price,stock}= productData
 
-    if ( !title || !description ||  !code || !price || stock === undefined || !category) {
+    if ( !title || !description || !price || stock === undefined) {
         throw new Error("FALTAN CAMPOS REQUERIDOS")
     }
 
-    // verificar si el código ya existe
-    const codeExists = products.some(p => p.code === code);
-    if (codeExists) {
-        throw new Error("EL CÓDIGO DEL PRODUCTO YA EXISTE");
+    // validar tipos de datos
+    if (typeof price !== 'number' || price <= 0) {
+        throw new Error("EL PRECIO DEBE SER UN NÚMERO POSITIVO");
+    }
+
+    if (!Number.isInteger(stock) || stock < 0) {
+        throw new Error("EL STOCK DEBE SER UN NÚMERO ENTERO NO NEGATIVO");
     }
 
     // generar nuevo ID 
@@ -49,11 +52,9 @@ addProduct (productData){
         id: newId,
         title,
         description,
-        code,
         price,
         status: true,
         stock,
-        category,
         thumbnails: productData.thumbnails || []
     };
 
@@ -75,6 +76,19 @@ updateProduct(id,updates){
 
     // no permitir actualizar el id
     delete updates.id;
+
+    // validar tipos si se están actualizando
+    if (updates.price !== undefined) {
+        if (typeof updates.price !== 'number' || updates.price <= 0) {
+            throw new Error("EL PRECIO DEBE SER UN NÚMERO POSITIVO");
+        }
+    }
+
+    if (updates.stock !== undefined) {
+        if (!Number.isInteger(updates.stock) || updates.stock < 0) {
+            throw new Error("EL STOCK DEBE SER UN NÚMERO ENTERO NO NEGATIVO");
+        }
+    }
 
     // actualizar el producto manteniendo los valores existentes
     products[index] = {
